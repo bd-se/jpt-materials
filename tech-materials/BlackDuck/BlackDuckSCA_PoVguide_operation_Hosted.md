@@ -1,3 +1,9 @@
+---
+title: Black Duck PoVガイド
+subtitle: ""
+date: 2026/01/23
+author: ブラック・ダック・ソフトウェア合同会社 パートナー担当
+---
 # PoVガイド実践編
 
 ## PoVの流れ
