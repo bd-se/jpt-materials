@@ -1,0 +1,26 @@
+# こうやると、ヘッダーの構成を強制できて楽しいが、フォルダ分けを考える必要と、テーラリングしてセクションを消す場合に書きづらくなるから採用しない？
+# MD043/required-headings : Required heading structure : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md043.md
+config:
+  # Path to configuration file to extend
+  extends: "../.markdownlint-cli2.yaml"
+
+  MD043: False
+  MD043:
+    # List of headings
+    headings: [
+      "# PoVガイド実践編",
+      "## PoVの流れ",
+      "+",
+      "## ダウンロード・インストール・初期設定",
+      "+",
+      "## 解析",
+      "+",
+      "### 代表的な解析方法",
+      "+",
+      "### お客様固有の開発環境がある場合", 
+      "## 結果確認",
+      "### 代表的な解析方法の結果",
+      "## リザルトミーティング",
+      "## オプション機能の紹介",
+      "*",
+  ]

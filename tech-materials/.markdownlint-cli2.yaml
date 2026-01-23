@@ -1,0 +1,32 @@
+# このリポジトリにおける Markdownlint の設定ファイル
+# see: https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml
+
+customRules:
+  - ./Templates/rules/allowed-callout-keywords.js
+config:
+  # Default state for all rules
+  default: true
+  # Path to configuration file to extend
+  extends: null
+
+  # カスタムルール: 許可するコールアウトキーワードの指定
+  allowed-callout-keywords:
+    allow: ["NOTE", "IMPORTANT", "WARNING"]
+    caseInsensitive: true
+
+  MD003:
+    # Heading style ### Heading 3
+    style: "atx"
+
+  # MD013/line-length : Line length : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md013.md
+  MD013: false
+
+  # MD033/inline-html : Inline HTML : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md033.md
+  # 表内の改行 <br> タグを許可する
+  MD033:
+    table_allowed_elements: ["br"]
+
+  # MD007/indentation : Unordered list indentation : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md007.md
+  # 4スペースでインデントを強制
+  MD007:
+    indent: 4
