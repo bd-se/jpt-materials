@@ -364,9 +364,9 @@ SCAの解析で、サポートする一部のパッケージマネージャー�
 
 ### 代表的な解析方法の結果
 
-解析が終了するとプロジェクトの 「Issues」タブ結果を見ることができます。
+解析が終了するとプロジェクトの 「Issues」タブで結果を見ることができます。
 
-画面説明をしたい #TODO-IMAGE
+![issues](img/Polaris_PoVguide_operation-issues.png)
 
 Issues 画面の 左側で、表示されるIssuesのフィルターが可能です。
 チェックボックスに

@@ -226,7 +226,7 @@ NTLM認証の場合は以下のオプションも適宜設定してください�
     3. 「Black Duck Detect（CLI）」画面で、「＋Detect CLIを追加」をクリックして、ダウンロードしたファイルを指定
 3. スキャンを実施
 
-![Detect CLIのインストール](attachments/BlackDuckSCA_PoVguide_operation_Hosted-install-detect-cli.png)
+![Detect CLIのインストール](img/BlackDuckSCA_PoVguide_operation_Hosted-install-detect-cli.png)
 
 元情報が古いと思う #TODO
 
@@ -270,7 +270,7 @@ Detect によるスキャンでは、お客様がお使いのパッケージマ�
 
 ドキュメント： [Detectors](https://documentation.blackduck.com/ja-JP/bundle/detect/page/components/detectors.html) の表でお使いのパッケージマネージャーを探し以下を確認「Detector Type」の欄を確認し、必要な要件がそろっているか確認します。
 
-![Detectors](attachments/BlackDuckSCA_PoVguide_operation_Hosted-detectors.png)
+![Detectors](img/BlackDuckSCA_PoVguide_operation_Hosted-detectors.png)
 
 特に確認すべき列は以下です。
 
@@ -279,7 +279,7 @@ Detect によるスキャンでは、お客様がお使いのパッケージマ�
 
 例：Mavenの場合
 
-![Detector Maven](attachments/BlackDuckSCA_PoVguide_operation_Hosted-detectors-maven.png)
+![Detector Maven](img/BlackDuckSCA_PoVguide_operation_Hosted-detectors-maven.png)
 
 上記の例の場合、Mavenに対しては、Maven CLI, Maven Wrapper CLI, Maven Project Inspector の3種類のDetector をサポートしています。Maven Project Inspector では、pom.xml ファイルのみが要件となっていますが、Accuracy は LOW となります。Maven CLI は Accuracy は HIGH ですが、mvn コマンドが実行可能であることを要求します。しかし精度は上がります。
 
@@ -287,7 +287,7 @@ Detect によるスキャンでは、お客様がお使いのパッケージマ�
 
 上記のドキュメント：Detectors では 概要を表形式で掲載していますが、詳細を確認する場合は、ドキュメント：[Package Manager information for Detect](https://documentation.blackduck.com/ja-JP/bundle/detect/page/packagemgrs/overview.html) 配下の「＜パッケージマネージャー名＞ Support」 のページを確認します。
 
-![Support Package Managers](attachments/BlackDuckSCA_PoVguide_operation_Hosted-packagemanagers.png)
+![Support Package Managers](img/BlackDuckSCA_PoVguide_operation_Hosted-packagemanagers.png)
 
 #### オプションの設定
 
@@ -372,7 +372,7 @@ bash <(curl -sL https://detect.blackduck.com/detect10.sh) \
 
 CLIに渡すオプションを何にするかの調査には、一度GUIで解析し、ログから使用したオプションを参照すると便利です。
 
-![Detect Desktop の Option](attachments/BlackDuckSCA_PoVguide_operation_Hosted%201.png)
+![Detect Desktop の Option](img/BlackDuckSCA_PoVguide_operation_Hosted%201.png)
 
 ### バイナリスキャン
 

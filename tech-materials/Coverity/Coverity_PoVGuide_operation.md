@@ -314,18 +314,18 @@ coverity commit
 Coverity Connect にログインすると、解析結果が表示可能なプロジェクトが一覧で表示されます。
 解析結果を表示したいプロジェクトをクリックすると、解析結果表示画面に遷移します。
 
-![プロジェクト一覧画面](attachments/Coverity_PoVGuide_operation-projects.png)
+![プロジェクト一覧画面](img/Coverity_PoVGuide_operation-projects.png)
 
 解析結果表示画面からプロジェクトの一覧に戻るには、「プロジェクトおよび階層の検索」-「プロジェクト (すべてを表示)」 の「すべてを表示」の部分をクリックしてください。
 
-![「すべてのプロジェクト」リンクの位置](attachments/Coverity_PoVGuide_operation-allproject.png)
+![「すべてのプロジェクト」リンクの位置](img/Coverity_PoVGuide_operation-allproject.png)
 
 ### 不具合ビュー
 
 下記が、Coverity Connect の問題を表示するメインのビューです。
 左上の表の中から1件の問題をクリックすると、左下のエリアにソースコードと問題の内容を表示します。
 
-![問題ビュー](attachments/Coverity_PoVGuide_operation-main.png)
+![問題ビュー](img/Coverity_PoVGuide_operation-main.png)
 
 ### トリアージ
 
@@ -341,7 +341,7 @@ Coverity Connect にログインすると、解析結果が表示可能なプロ
 
 ### ビューによるフィルタ
 
-![ビューのメニュー](attachments/Coverity_PoVGuide_operation-view.png)
+![ビューのメニュー](img/Coverity_PoVGuide_operation-view.png)
 
 左上の表に表示する内容は、「ビュー」と「フィルタ」を設定することで、様々な条件で表示する内容を切り替えることができます。
 
@@ -400,7 +400,7 @@ cov-analyze --dir idir -–coding-standard-config certc-all.config
 5. 「ファイルのルール」タブから、ファイルパスのパターン（正規表現）とコンポーネントのマッピングルールを作成
     - 条件を満たさない場合はその他に振り分けとなります
 
-![コンポーネントマップの作成](attachments/Coverity_PoVGuide_operation-componentmap.png)
+![コンポーネントマップの作成](img/Coverity_PoVGuide_operation-componentmap.png)
 
 コンポーネントマップ設定方法
 
