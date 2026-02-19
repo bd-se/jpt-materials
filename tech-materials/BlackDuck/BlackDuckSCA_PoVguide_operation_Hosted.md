@@ -295,10 +295,13 @@ Detect によるスキャンでは、お客様がお使いのパッケージマ�
 
 Detector の設定とそれ以外（Debug）とかのジャンルがある。
 
+```text
+memo
 https://documentation.blackduck.com/ja-JP/bundle/detect/page/properties/basic-properties.html
 https://documentation.blackduck.com/ja-JP/bundle/detect/page/properties/configuration/default.html
 https://documentation.blackduck.com/ja-JP/bundle/detect/page/properties/detectors/overview.html
 https://documentation.blackduck.com/ja-JP/bundle/detect/page/properties/detectors/maven.html
+```
 
 #### 例：MAVEN – maven の動的スキャン
 
@@ -450,7 +453,7 @@ blackduck-c-cpp –-config <yaml file>
 
 このセクションにはよくあるトラブル事例を記載してください。 #TODO
 
-参考: https://documentation.blackduck.com/ja-JP/bundle/detect/page/troubleshooting/solutions.html
+参考: [Common Detect troubleshooting solutions](https://documentation.blackduck.com/ja-JP/bundle/detect/page/troubleshooting/solutions.html)
 
 #### スキャンエラーが発生した場合
 
@@ -469,7 +472,7 @@ blackduck-c-cpp –-config <yaml file>
 
 Depth に関する注意点や関連トラブルを追記してください。 #TODO
 
-参考: https://documentation.blackduck.com/ja-JP/bundle/detect/page/runningdetect/detectorcascade.html
+参考: [](https://documentation.blackduck.com/ja-JP/bundle/detect/page/runningdetect/detectorcascade.html)
 
 ### JSON/JSONLD ファイルの内容について
 

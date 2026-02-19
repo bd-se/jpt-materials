@@ -52,7 +52,11 @@ flowchart TD
 
 Coverity のライセンスおよびインストーラは Community サイトから入手します。
 
-初期設定手順を追記 #TODO
+トライアルライセンスが発行されると、Communityサイトのアカウントに関するメールと、トライアルライセンスの発行をお知らせするメール（英語）がトライアル担当者に配信されます。
+
+ライセンス発行のメールは届いているが、アカウントのメールが届いていない場合は、  下記のログイン先で「Forgot Password」をクリックして、パスワードのリセットとアカウントの設定をお願いします。
+
+- [https://community.blackduck.com/s/login/](https://community.blackduck.com/s/login/)
 
 ### ライセンスのダウンロード
 
@@ -82,7 +86,9 @@ Community サイトから Coverity Analysis と Coverity Platform のインス�
 3. 必要に応じて「Product Group」と「Release Version」を選択
 4. 「Operating System」と「Packages」を選び、対象マシン向けのインストーラをダウンロード
 
-画面例（Windows 64bit）: #TODO-IMAGE
+Download 画面例（Windows 64bit）
+
+![Download 画面例（Windows 64bit）](img/Coverity_PoVGuide_operation_download.png)
 
 ## インストール
 
@@ -163,10 +169,6 @@ Coverity Connect に解析結果をコミットするため、あらかじめプ
 
 以降の手順ではストリーム名を参照します。
 
-## ツール固有の設定
-
-例： 選別ストアを作る これ要る？ #TODO
-
 ## 解析
 
 Coverity Analysis をインストールしたマシン上で、解析対象のコードベースのビルドと解析を行います。
@@ -205,9 +207,7 @@ stateDiagram
 ### 1. coverity.yaml の生成
 
 解析対象のソースコードのルートディレクトリで、```coverity setup``` コマンドを実行し、解析に必要な設定ファイル（ ```coverity.yaml```）を作成します。
-coverity.yaml の細かい編集方法は、Appendix の[coverity.yamlの編集](#coverity.yamlの編集) で説明します。
-
-リンク張る #TODO
+coverity.yaml の細かい編集方法は、Appendix の [yamlファイルの編集](#yamlファイルの編集) で説明します。
 
 コマンド
 
@@ -356,11 +356,10 @@ Coverity Connect にログインすると、解析結果が表示可能なプロ
 
 ## リザルトミーティング
 
-リザルトミーティングの説明と、リザルトミーティングに用意してほしいもの  #TODO
+リザルトミーティングでは、お客様の当初のクライテリアが達成されたかを確認します。
+お客様はリザルトミーティング中に、Coverity Connect の画面を画面共有できるようにご準備ください。
 
 ## オプション機能の紹介
-
-お客様に時間があれば見てほしい機能と、ドキュメントの位置を提示します。
 
 ### コーディングルールの解析
 
@@ -588,7 +587,7 @@ cov-commit-defects --dir <中間ディレクトリ>  \
 > PoVライセンスでは、別途コミットパスワード（passphrase）の入力が必要です。  
 > 担当SEが別途連絡します。
 
-### coverity.yamlの編集
+### yamlファイルの編集
 
 Coverity CLI の解析では、```coverity.yaml``` ファイルを編集することで、coverity コマンドの各タスク （```capture```, ```analyze```, ```commit```) のオプションを設定することができます。
 
@@ -660,7 +659,7 @@ analyze:
 - 関数ポインタ使用時の関数間解析を有効
 - 仮想関数オーバライド使用時の関数間解析を有効
 - すべての品質/セキュリティチェッカーを有効
-- デッドコード内の不具合検知を行わない #TODO
+- デッドコード内の不具合検知を行わない
 
 #### analyze コーディング規約解析
 
