@@ -20,32 +20,6 @@ author: ブラック・ダック・ソフトウェア合同会社 パートナ�
     - 結果報告会（最大1.5時間程度）を行い、PoVの目的達成を確認します。
     - 開発者や購買決定者の参加を推奨します。
 
-## 構成
-
-```mermaid
-flowchart TD
-
-    subgraph A["解析実行マシン群"]
-        direction LR
-        Analysis["Coverity Analysis"]
-        Target["解析対象"]
-        Result["解析結果"]
-        Analysis -->|"①解析"| Target
-    end
-  
-    subgraph S["Coverity Platform"]
-        direction LR
-        CC["Coverity Connect<br/>(Webアプリ)"]
-        DB[("問題データベース")]
-        CC---DB
-    end
-
-  CLIENT@{shape: procs, label: "クライアントPC（ブラウザ）" }
-
-  Analysis --->|"③解析結果<br/>コミット"| S
-  CLIENT ---|"④解析結果</br>閲覧"| S
-```
-
 ## ダウンロード
 
 ### Community サイト
@@ -186,21 +160,7 @@ cuda / Fortran / Scala は Coverity CLI でサポートしていません。
 下記が、Coverity CLIによる解析の流れです。```coverity setup``` コマンドで初期設定を行い、```coverity scan``` で解析を行います。```coverity scan``` は3つのフェーズに分けて実行することが可能です。
 初回実行時は正しく解析が実行できているか確認のため、一括で解析作業を実施する ```coverity scan``` ではなく、以下のコマンドを順次実行、結果の確認を行ってください。
 
-```mermaid
-stateDiagram
-    direction LR
-    state scan {
-        capture: coverity capture(ソースファイルのキャプチャ)
-        analyze: coverity analyze(解析)
-        commit: coverity commit(登録)
-
-        direction LR
-        capture --> analyze
-        analyze --> commit
-    }
-    setup: coverity setup(初期設定)
-    setup --> scan
-```
+![Coverity_PoVGuide_flow.png](img/Coverity_PoVGuide_flow.png)
 
 各コマンドの共通オプションとして、```--dir``` オプションによる中間ディレクトリの指定があります。中間ディレクトリは Coverity 解析作業中に使用される作業ディレクトリであり、一連の解析作業で同じディレクトリを指定する必要があります。
 
@@ -211,7 +171,7 @@ coverity.yaml の細かい編集方法は、Appendix の [yamlファイルの編
 
 コマンド
 
-```shell
+```bash
 coverity setup
 ```
 
@@ -230,13 +190,13 @@ coverity setup
 解析対象のソースコードのルートディレクトリに ```coverity.yaml``` ファイルがあることを確認してください。
 そのディレクトリで、```coverity capture``` を実行してください
 
-```shell
+```bash
 coverity capture
 ```
 
 処理が完了すると下記のようにソースファイルキャプチャー処理結果が表示されます
 
-```text
+```bash
 Capture summary:
     SUCCESS: 1551
     INCOMPLETE: 0
@@ -260,13 +220,13 @@ Capture summary:
 
 コマンド
 
-```shell
+```bash
 coverity analyze
 ```
 
 解析結果サマリー例
 
-```text
+```bash
 Analysis summary report:
 ------------------------
 Files analyzed                 : 1286 Total
@@ -298,7 +258,7 @@ Defect occurrences found       : 187 Total
 
 コマンド
 
-```shell
+```bash
 coverity commit
 ```
 
@@ -368,13 +328,13 @@ Coverity Connect にログインすると、解析結果が表示可能なプロ
 
 cov-build：  --emit-complementary-info オプションを追加
 
-```shell
+```bash
 cov-build --dir idir --emit-complementary-info make
 ```
 
 cov-analyze:  --coding-standard-config <設定ファイル> オプションを追加
 
-```shell
+```bash
 cov-analyze --dir idir -–coding-standard-config certc-all.config
 ```
 
@@ -448,25 +408,25 @@ cov-configure コマンドを実行し、解析対象をコンパイルするた
 
 gcc および g++ コンパイラの場合
 
-```shell
+```bash
 cov-configure --gcc
 ```
 
 Microsoft C/C++ コンパイラ cl.exe の場合
 
-```shell
+```bash
 cov-configure --msvc
 ```
 
 Java の場合
 
-```shell
+```bash
  cov-configure --java
 ```
 
 Microsoft C# コンパイラ csc.exe の場合
 
-```shell
+```bash
 cov-configure --cs
 ```
 
@@ -474,32 +434,32 @@ cov-configure --cs
 
 組み込み系 C/C++ コンパイラの場合のコマンドフォーマットは以下の通りです。
 
-```shell
+```bash
 cov-configure --template --compiler <コンパイラ名> --comptype <コンパイラタイプ> 
 ```
 
 例えば、Renesas shコンパイラの場合、下記のようになります。```shc``` がコンパイラ名で、```renesascc``` がCoverity として認識しているコンパイラの種類です。
 
-```shell
+```bash
 cov-configure --template --compiler shc --comptype renesascc 
 ```
 
 他の例です。
 ```arm-linux-gnueabi-gcc``` でARM用クロスコンパイルを行っている場合
 
-```shell
+```bash
 cov-configure --template --compiler arm-linux-gnueabi-gcc --comptype gcc 
 ```
 
 使用可能な comptype は、下記コマンドで確認することができます。
 
-```shell
+```bash
 cov-configure --list-compiler-types
 ```
 
 ```cov-configure--list-compiler-types``` 出力例：
 
-```text
+```bash
 armcc:armcc,armcc,C,FAMILY HEAD,ARM C Compiler (CIT)   
 csc,csc,C#,FAMILY HEAD,Microsoft C# Compiler
 g++,g++,CXX,SINGLE,GNU C++ compiler
@@ -522,14 +482,14 @@ cov-buildコマンドを実行し、解析対象のビルドキャプチャを�
 
 コマンド書式
 
-```shell
+```bash
 ＜解析対象のクリーンビルドコマンド＞
 cov-build --dir <中間ディレクトリ> --encoding <Shift_JIS/EUC-JP/UTF-8> <ビルドコマンド>
 ```
 
 例
 
-```shell
+```bash
 make clean
 cov-build --dir idir --encoding UTF-8 make all
 ```
@@ -543,7 +503,7 @@ cov-build --dir idir --encoding UTF-8 make all
 
 状況にもよりますが、90%以上のビルド結果が得られた場合には、解析の段階に進みます。
 
-```shell
+```bash
 Build time (cov-build overall): 00:02:47.075967
 Emitted 794 Java compilation units (100%) successfully
 794 Java compilation units (100%) are ready for analysis
@@ -556,7 +516,7 @@ The cov-build utility completed successfully.
 
 コマンド書式
 
-```shell
+```bash
 cov-analyze --dir <中間ディレクトリ> --all
 ```
 
@@ -577,7 +537,7 @@ cov-analyze --dir <中間ディレクトリ> --all
 
 コマンド書式
 
-```shell
+```bash
 cov-commit-defects --dir <中間ディレクトリ>  \
   --url http://＜Coverity Connectホスト名＞:8080 --user admin \
   --password <adminパスワード> --stream <ストリーム名>
