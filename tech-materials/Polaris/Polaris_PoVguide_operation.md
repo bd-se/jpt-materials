@@ -1,6 +1,6 @@
 ---
 title: Polaris PoVガイド
-subtitle: ""
+subtitle: SAST/SCA編
 date: 2026/01/23
 author: ブラック・ダック・ソフトウェア合同会社 パートナー担当
 ---
@@ -9,17 +9,17 @@ author: ブラック・ダック・ソフトウェア合同会社 パートナ�
 ## PoVの流れ
 
 - ヒアリング
-  - PoVの目的・目標と解析対象（言語、規模、ビルドコマンド等）を確認します。
-  - ヒアリング結果をもとに実施可否を判断します。
+    - PoVの目的・目標と解析対象（言語、規模、ビルドコマンド等）を確認します。
+    - ヒアリング結果をもとに実施可否を判断します。
 - 発行・準備
-  - 評価ユーザーのメールアドレスを担当SEに連絡してください。
-  - お客様は解析対象のソース一式または解析対象のWebアプリを準備します。
-  - Black DuckがPoV用のPolaris環境を用意し、ログイン情報を送付します。
+    - 評価ユーザーのメールアドレスを担当SEに連絡してください。
+    - お客様は解析対象のソース一式または解析対象のWebアプリを準備します。
+    - Black DuckがPoV用のPolaris環境を用意し、ログイン情報を送付します。
 - 解析・評価
-  - お客様がソースをPolarisへアップロードして解析結果を確認します。
-  - 必要に応じてBlack DuckのSEがサポートします。
+    - お客様がソースをPolarisへアップロードして解析結果を確認します。
+    - 必要に応じてBlack DuckのSEがサポートします。
 - リザルトミーティング
-  - 結果報告会（最大1時間）でPoVの目的達成を確認します。
+    - 結果報告会（最大1時間）でPoVの目的達成を確認します。
 
 ```mermaid
 flowchart LR
@@ -29,15 +29,15 @@ PoV実施/ご評価 --> リザルトミーティング
 ```
 
 - ヒアリング
-  - PoV の目的・目標および解析対象（言語、規模、ビルドコマンド等）を確認します。
-  - ヒアリング結果をもとに PoV の実施可否を判断し、次のステップに進みます。
+    - PoV の目的・目標および解析対象（言語、規模、ビルドコマンド等）を確認します。
+    - ヒアリング結果をもとに PoV の実施可否を判断し、次のステップに進みます。
 - 発行・準備
-  - Polaris を評価するユーザーのメールアドレス一覧を担当 SE に連絡してください。
-  - お客様は解析対象のソースコード一式または解析対象の Web アプリケーションを準備してください。
-  - ブラックダックが PoV 用 Polaris 環境を用意し、各ユーザーにログイン情報をメールで送付します。
+    - Polaris を評価するユーザーのメールアドレス一覧を担当 SE に連絡してください。
+    - お客様は解析対象のソースコード一式または解析対象の Web アプリケーションを準備してください。
+    - ブラックダックが PoV 用 Polaris 環境を用意し、各ユーザーにログイン情報をメールで送付します。
 - 解析・ご評価
-  - お客様はソースコードを Polaris にアップロードし、解析結果を確認してください。
-  - 必要に応じてブラックダックの SE がメールや画面共有でサポートします。
+    - お客様はソースコードを Polaris にアップロードし、解析結果を確認してください。
+    - 必要に応じてブラックダックの SE がメールや画面共有でサポートします。
 
 > [!Note]
 > PoV期間は2週間です。
@@ -119,7 +119,7 @@ GitHub などの SCM ホスティングサービスで下記の情報を用意�
 
 - リポジトリのURL
 - リポジトリにアクセスできる権限のあるトークン
-  - GitHub の場合、トークン作成時に「repo」へのアクセスを付与してください
+    - GitHub の場合、トークン作成時に「repo」へのアクセスを付与してください
 
 Polaris 上で、SCM Integration を設定します。
 
@@ -372,11 +372,11 @@ Issues 画面の 左側で、表示されるIssuesのフィルターが可能で
 チェックボックスに
 
 - 必要に応じて下記の内容を入れるようにしてください
-  - メインのIssues画面へのナビゲーション
-  - Issueのフィルターの使い方
-  - Issue １件の見方
-  - トリアージのしかた
-  - 製品固有のビュー
+    - メインのIssues画面へのナビゲーション
+    - Issueのフィルターの使い方
+    - Issue １件の見方
+    - トリアージのしかた
+    - 製品固有のビュー
 
 ## リザルトミーティング
 
@@ -407,12 +407,12 @@ Bridge CLI を用いると、殆どの環境でPolarisの自動解析環境を�
 GitHub, GitLab, Azure DevOps, Jenkins などには、自動解析ををサポートするプラグインやテンプレートをご用意しています。下記の資料を参考にしてください。
 
 - Bridge CLI について
-  - [Bridge CLI Documentation - Overview](https://documentation.blackduck.com/ja-JP/bundle/bridge/page/documentation/c_overview.html)
+    - [Bridge CLI Documentation - Overview](https://documentation.blackduck.com/ja-JP/bundle/bridge/page/documentation/c_overview.html)
 - CIツールとの連携方法ドキュメント
-  - GitHub: [Using Black Duck Security Scan Action for Polaris](https://documentation.blackduck.com/ja-JP/bundle/bridge/page/documentation/c_github-polaris.html)
-  - GitLab: [Using the Black Duck Security Scan Template with Polaris](https://documentation.blackduck.com/ja-JP/bundle/bridge/page/documentation/c_gitlab-with-polaris.html)
-  - Azure DevOps: [Using Black Duck Security Scan Extension with Polaris](https://documentation.blackduck.com/ja-JP/bundle/bridge/page/documentation/c_azure-with-polaris.html)
-  - Jenkins: [Jenkins - Black Duck Security Scan Plugin for Jenkins](https://documentation.blackduck.com/ja-JP/bundle/bridge/page/documentation/c_using-jenkins-plugin.html)
+    - GitHub: [Using Black Duck Security Scan Action for Polaris](https://documentation.blackduck.com/ja-JP/bundle/bridge/page/documentation/c_github-polaris.html)
+    - GitLab: [Using the Black Duck Security Scan Template with Polaris](https://documentation.blackduck.com/ja-JP/bundle/bridge/page/documentation/c_gitlab-with-polaris.html)
+    - Azure DevOps: [Using Black Duck Security Scan Extension with Polaris](https://documentation.blackduck.com/ja-JP/bundle/bridge/page/documentation/c_azure-with-polaris.html)
+    - Jenkins: [Jenkins - Black Duck Security Scan Plugin for Jenkins](https://documentation.blackduck.com/ja-JP/bundle/bridge/page/documentation/c_using-jenkins-plugin.html)
 
 ### Code Sight
 
