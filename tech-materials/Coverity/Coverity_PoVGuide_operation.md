@@ -24,12 +24,12 @@ author: ブラック・ダック・ソフトウェア合同会社 パートナ�
 
 ### Community サイト
 
-Coverity のライセンスおよびインストーラは Community サイトから入手します。
+Coverity のライセンスおよびインストーラは [Community サイト](https://community.blackduck.com/s/) から入手します。
 
 トライアルライセンスが発行されると、Communityサイトのアカウントに関するメールと、トライアルライセンスの発行をお知らせするメール（英語）がトライアル担当者に配信されます。
 
-ライセンス発行のメールは届いているが、アカウントのメールが届いていない場合は、  下記のログイン先で「Forgot Password」をクリックして、パスワードのリセットとアカウントの設定をお願いします。
-
+ライセンス発行のメールは届いているが、アカウントのメールが届いていない場合は、  
+下記のログイン先で「Forgot Password」をクリックして、パスワードのリセットとアカウントの設定をお願いします。
 - [https://community.blackduck.com/s/login/](https://community.blackduck.com/s/login/)
 
 ### ライセンスのダウンロード
